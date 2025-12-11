@@ -1,24 +1,48 @@
-# 📉 Telco Customer Churn Prediction
+# Telco Customer Churn Analysis  
+Predicting customer churn using machine learning to support telecom retention strategy.
 
-## 📖 Project Overview
-Customer churn is a critical issue for telecommunications companies. This project analyzes a dataset of 7,043 customers to identify key drivers of churn and builds predictive models to help the company retain at-risk users.
+---
 
-## 🎯 Objectives
-- Analyze customer demographics, services, and account information.
-- Identify the primary factors contributing to customer churn.
-- Build machine learning models (Logistic Regression & Random Forest) to predict churn.
+## 📌 Project Overview  
+This project applies the complete predictive analytics workflow to analyze the **Telco Customer Churn** dataset.  
+The primary objective is to identify key factors that drive customer churn and develop predictive models to support proactive retention strategies.
 
-## 🛠️ Tools & Technologies
-- **Language:** Python
-- **Libraries:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
-- **Environment:** Google Colab
+This repository contains all required components for the ISOM 835 Predictive Analytics Term Project, including notebooks, final report, visualizations, and documentation.
 
-## 📊 Key Findings
-- **Price Sensitivity:** High monthly charges are the #1 driver of churn.
-- **Contract Type:** Month-to-month customers churn at a significantly higher rate.
-- **Fiber Optic:** There is a specific dissatisfaction trend among Fiber Optic users.
+---
 
-## 🚀 How to Run
-1. Open the `.ipynb` file in this repository.
-2. Click the "Open in Colab" button (if available) or download the file to run locally.
-3. Ensure the dataset `WA_Fn-UseC_-Telco-Customer-Churn.csv` is loaded.
+## 🎯 Objectives  
+- Identify major drivers of customer churn  
+- Build and compare multiple machine learning models  
+- Evaluate performance and select the best model  
+- Translate technical results into actionable business insights  
+- Consider ethical implications and responsible AI practices  
+- Build a portfolio-ready GitHub repository  
+
+---
+
+## 📂 Dataset  
+This project uses the widely studied **Telco Customer Churn** dataset.
+
+- **Source (Kaggle):** https://www.kaggle.com/datasets/blastchar/telco-customer-churn  
+- **Observations:** 7,043 customers  
+- **Features:** 21 attributes (demographics, contract type, internet services, account charges, etc.)  
+- **Target Variable:** `Churn` (Yes/No)  
+- **Business Relevance:** Predicting churn helps telecom companies design targeted retention strategies that reduce revenue loss.
+
+---
+
+## 🛠 Tools & Technologies  
+- Python 3.x  
+- Google Colab  
+- pandas, numpy  
+- matplotlib, seaborn  
+- scikit-learn  
+- Git & GitHub  
+
+---
+
+## 📘 Google Colab Notebook  
+Click below to open the analysis notebook:
+
+👉 **Colab Notebook:**  
