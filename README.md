@@ -45,4 +45,49 @@ This project uses the widely studied **Telco Customer Churn** dataset.
 ## 📘 Google Colab Notebook  
 Click below to open the analysis notebook:
 
-👉 **Colab Notebook:**  
+👉 **Colab Notebook:** https://colab.research.google.com/drive/1zComTeH1UKMLGlCxpnsiaxBDWFI4ZG2j?usp=sharing
+
+---
+
+## 📄 Final Report  
+Full written report (10–12 pages) submitted for the ISOM 835 course.
+
+👉 **Report PDF:** `report/ChiYuan_Wu_Telco_Churn_Report.pdf`
+
+---
+
+## 📊 Key Findings  
+- Customers with **month-to-month contracts**, **high monthly charges**, and **electronic check payment methods** exhibit significantly higher churn.  
+- Tenure is a strong churn indicator—customers in early months are most likely to leave.  
+- **Random Forest** outperformed Logistic Regression with higher accuracy and better feature importance interpretation.  
+- Top predictive features:  
+  - Contract type  
+  - Tenure  
+  - Monthly charges  
+  - Tech support availability  
+
+These factors provide clear direction for targeted retention campaigns.
+
+---
+
+## 💡 Business Recommendations  
+- Encourage customers to switch to **one-year or two-year contracts** through promotions.  
+- Provide **discount bundles** to customers with high monthly charges.  
+- Improve **technical support services** to enhance customer satisfaction.  
+- Use model predictions for **early-stage churn intervention**, focusing on new customers.  
+
+---
+
+## ⚖️ Responsible AI & Ethics  
+Topics addressed in the report include:
+
+- Identifying potential sources of bias in demographic attributes  
+- Ensuring fair treatment across customer segments  
+- Avoiding discriminatory practices in targeting or retention programs  
+- Maintaining transparency in model use and communication  
+- Ethical considerations for deploying predictive models in customer-facing decisions  
+
+---
+
+
+
