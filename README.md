@@ -1,13 +1,13 @@
-# 🚀 Telco Customer Churn Prediction
+# Telco Customer Churn Prediction
 
-## 📌 Business Problem
+## Business Problem
 
 Telecommunication companies face significant revenue risk due to customer churn.  
 This project builds predictive models to identify high-risk customers and support targeted retention strategies.
 
 ---
 
-## 📊 Dataset Overview
+## Dataset Overview
 
 - **7,043 customers**
 - **21 features**
@@ -16,7 +16,7 @@ This project builds predictive models to identify high-risk customers and suppor
 
 ---
 
-## 🛠 Modeling Approach
+## Modeling Approach
 
 ### Data Preparation
 - Missing value handling (TotalCharges cleaned)
@@ -34,7 +34,7 @@ This project builds predictive models to identify high-risk customers and suppor
 
 ---
 
-## 📈 Model Performance
+## Model Performance
 
 | Model | Test AUC | CV AUC | Accuracy |
 |-------|----------|--------|----------|
@@ -45,7 +45,7 @@ This project builds predictive models to identify high-risk customers and suppor
 
 ---
 
-## 🔎 Key Insights
+## Key Insights
 
 - Month-to-month contracts show highest churn risk  
 - Higher monthly charges increase churn probability  
@@ -53,7 +53,7 @@ This project builds predictive models to identify high-risk customers and suppor
 
 ---
 
-## 💡 Business Recommendations
+## Business Recommendations
 
 - Targeted retention campaigns for month-to-month customers  
 - Incentives for long-term contract conversion  
@@ -61,6 +61,6 @@ This project builds predictive models to identify high-risk customers and suppor
 
 ---
 
-## 🔧 Tech Stack
+## Tech Stack
 
 Python • Pandas • NumPy • Scikit-learn • Matplotlib • Seaborn
