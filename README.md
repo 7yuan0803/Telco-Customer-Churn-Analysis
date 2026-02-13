@@ -1,53 +1,66 @@
-Customer Churn Prediction & Retention Strategy Modeling
-Business Problem
+# 🚀 Telco Customer Churn Prediction
 
-Telecom providers face significant revenue risk due to customer churn. This project builds predictive models to identify high-risk customers and inform targeted retention strategies.
+## 📌 Business Problem
 
-Dataset
+Telecommunication companies face significant revenue risk due to customer churn.  
+This project builds predictive models to identify high-risk customers and support targeted retention strategies.
 
-7,043 customers
+---
 
-21 features
+## 📊 Dataset Overview
 
-Binary classification (Churn: Yes/No)
+- **7,043 customers**
+- **21 features**
+- Binary classification (Churn: Yes/No)
+- Imbalanced dataset (~26% churn rate)
 
-Imbalanced dataset (~26% churn rate)
+---
 
-Modeling Approach
+## 🛠 Modeling Approach
 
-Data cleaning and preprocessing
+### Data Preparation
+- Missing value handling (TotalCharges cleaned)
+- One-hot encoding for categorical variables
+- Train/Test split (80/20)
 
-One-hot encoding for categorical features
+### Models Implemented
+- Logistic Regression (StandardScaler + Pipeline)
+- Random Forest Classifier
 
-Train/test split (80/20)
+### Evaluation Metrics
+- ROC-AUC
+- Accuracy
+- 5-Fold Cross-Validation
 
-Logistic Regression (with StandardScaler Pipeline)
+---
 
-Random Forest Classifier
+## 📈 Model Performance
 
-ROC-AUC evaluation
+| Model | Test AUC | CV AUC | Accuracy |
+|-------|----------|--------|----------|
+| Logistic Regression | 0.8319 | 0.8452 | 0.7875 |
+| Random Forest | 0.8160 | 0.8232 | 0.7854 |
 
-5-fold cross-validation
+**Logistic Regression demonstrated stronger and more stable cross-validation performance.**
 
-Results
-Model	Test AUC	CV AUC	Accuracy
-Logistic Regression	0.8319	0.8452	0.7875
-Random Forest	0.8160	0.8232	0.7854
+---
 
-Logistic Regression demonstrated stronger and more stable performance across validation folds.
+## 🔎 Key Insights
 
-Key Insights
+- Month-to-month contracts show highest churn risk  
+- Higher monthly charges increase churn probability  
+- Early-tenure customers are more likely to churn  
 
-Month-to-month contracts show highest churn risk
+---
 
-Higher monthly charges increase churn probability
+## 💡 Business Recommendations
 
-Early tenure customers are more likely to churn
+- Targeted retention campaigns for month-to-month customers  
+- Incentives for long-term contract conversion  
+- Early engagement programs within first 6 months  
 
-Business Recommendations
+---
 
-Targeted retention campaigns for month-to-month customers
+## 🔧 Tech Stack
 
-Incentives for long-term contract conversion
-
-Early engagement programs within first 6 months
+Python • Pandas • NumPy • Scikit-learn • Matplotlib • Seaborn
