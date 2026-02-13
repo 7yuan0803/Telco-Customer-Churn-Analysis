@@ -5,7 +5,7 @@
 Telecommunication companies face significant revenue risk due to customer churn.  
 This project builds predictive models to identify high-risk customers and support targeted retention strategies.
 
---
+
 
 ## Dataset Overview
 
@@ -14,7 +14,7 @@ This project builds predictive models to identify high-risk customers and suppor
 - Binary classification (Churn: Yes/No)
 - Imbalanced dataset (~26% churn rate)
 
----
+
 
 ## Modeling Approach
 
@@ -32,7 +32,7 @@ This project builds predictive models to identify high-risk customers and suppor
 - Accuracy
 - 5-Fold Cross-Validation
 
----
+
 
 ## Model Performance
 
@@ -43,7 +43,7 @@ This project builds predictive models to identify high-risk customers and suppor
 
 **Logistic Regression demonstrated stronger and more stable cross-validation performance.**
 
----
+
 
 ## Key Insights
 
@@ -51,7 +51,7 @@ This project builds predictive models to identify high-risk customers and suppor
 - Higher monthly charges increase churn probability  
 - Early-tenure customers are more likely to churn  
 
----
+
 
 ## Business Recommendations
 
@@ -59,7 +59,7 @@ This project builds predictive models to identify high-risk customers and suppor
 - Incentives for long-term contract conversion  
 - Early engagement programs within first 6 months  
 
----
+
 
 ## Tech Stack
 
