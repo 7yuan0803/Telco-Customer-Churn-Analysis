@@ -5,7 +5,7 @@
 Telecommunication companies face significant revenue risk due to customer churn.  
 This project builds predictive models to identify high-risk customers and support targeted retention strategies.
 
----
+--
 
 ## Dataset Overview
 
