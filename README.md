@@ -1,93 +1,53 @@
-# Telco Customer Churn Analysis  
-Predicting customer churn using machine learning to support telecom retention strategy.
+Customer Churn Prediction & Retention Strategy Modeling
+Business Problem
 
----
+Telecom providers face significant revenue risk due to customer churn. This project builds predictive models to identify high-risk customers and inform targeted retention strategies.
 
-## 📌 Project Overview  
-This project applies the complete predictive analytics workflow to analyze the **Telco Customer Churn** dataset.  
-The primary objective is to identify key factors that drive customer churn and develop predictive models to support proactive retention strategies.
+Dataset
 
-This repository contains all required components for the ISOM 835 Predictive Analytics Term Project, including notebooks, final report, visualizations, and documentation.
+7,043 customers
 
----
+21 features
 
-## 🎯 Objectives  
-- Identify major drivers of customer churn  
-- Build and compare multiple machine learning models  
-- Evaluate performance and select the best model  
-- Translate technical results into actionable business insights  
-- Consider ethical implications and responsible AI practices  
-- Build a portfolio-ready GitHub repository  
+Binary classification (Churn: Yes/No)
 
----
+Imbalanced dataset (~26% churn rate)
 
-## 📂 Dataset  
-This project uses the widely studied **Telco Customer Churn** dataset.
+Modeling Approach
 
-- **Source (Kaggle):** https://www.kaggle.com/datasets/blastchar/telco-customer-churn  
-- **Observations:** 7,043 customers  
-- **Features:** 21 attributes (demographics, contract type, internet services, account charges, etc.)  
-- **Target Variable:** `Churn` (Yes/No)  
-- **Business Relevance:** Predicting churn helps telecom companies design targeted retention strategies that reduce revenue loss.
+Data cleaning and preprocessing
 
----
+One-hot encoding for categorical features
 
-## 🛠 Tools & Technologies  
-- Python 3.x  
-- Google Colab  
-- pandas, numpy  
-- matplotlib, seaborn  
-- scikit-learn  
-- Git & GitHub  
+Train/test split (80/20)
 
----
+Logistic Regression (with StandardScaler Pipeline)
 
-## 📘 Google Colab Notebook  
-Click below to open the analysis notebook:
+Random Forest Classifier
 
-👉 **Colab Notebook:** https://colab.research.google.com/drive/1zComTeH1UKMLGlCxpnsiaxBDWFI4ZG2j?usp=sharing
+ROC-AUC evaluation
 
----
+5-fold cross-validation
 
-## 📄 Final Report  
-Full written report (10–12 pages) submitted for the ISOM 835 course.
+Results
+Model	Test AUC	CV AUC	Accuracy
+Logistic Regression	0.8319	0.8452	0.7875
+Random Forest	0.8160	0.8232	0.7854
 
-👉 **Report PDF:** `report/ChiYuan_Wu_Telco_Churn_Report.pdf`
+Logistic Regression demonstrated stronger and more stable performance across validation folds.
 
----
+Key Insights
 
-## 📊 Key Findings  
-- Customers with **month-to-month contracts**, **high monthly charges**, and **electronic check payment methods** exhibit significantly higher churn.  
-- Tenure is a strong churn indicator—customers in early months are most likely to leave.  
-- **Random Forest** outperformed Logistic Regression with higher accuracy and better feature importance interpretation.  
-- Top predictive features:  
-  - Contract type  
-  - Tenure  
-  - Monthly charges  
-  - Tech support availability  
+Month-to-month contracts show highest churn risk
 
-These factors provide clear direction for targeted retention campaigns.
+Higher monthly charges increase churn probability
 
----
+Early tenure customers are more likely to churn
 
-## 💡 Business Recommendations  
-- Encourage customers to switch to **one-year or two-year contracts** through promotions.  
-- Provide **discount bundles** to customers with high monthly charges.  
-- Improve **technical support services** to enhance customer satisfaction.  
-- Use model predictions for **early-stage churn intervention**, focusing on new customers.  
+Business Recommendations
 
----
+Targeted retention campaigns for month-to-month customers
 
-## ⚖️ Responsible AI & Ethics  
-Topics addressed in the report include:
+Incentives for long-term contract conversion
 
-- Identifying potential sources of bias in demographic attributes  
-- Ensuring fair treatment across customer segments  
-- Avoiding discriminatory practices in targeting or retention programs  
-- Maintaining transparency in model use and communication  
-- Ethical considerations for deploying predictive models in customer-facing decisions  
-
----
-
-
-
+Early engagement programs within first 6 months
