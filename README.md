@@ -1,5 +1,11 @@
 # Telco Customer Churn Prediction
 
+# Summary
+Best Model: Logistic Regression  
+Test AUC: 0.83  
+Cross-Validation AUC: 0.85
+
+
 ## Business Problem
 
 Telecommunication companies face significant revenue risk due to customer churn.  
