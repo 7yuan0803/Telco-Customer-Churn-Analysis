@@ -50,9 +50,8 @@ This project builds predictive models to identify high-risk customers and suppor
 **Logistic Regression demonstrated stronger and more stable cross-validation performance.**
 
 ## 📈 ROC Curve
-<p align="center">
-  <img src="images/roc_curve.png" width="600">
-</p>
+<img src="images/roc_curve.png" width="600">
+
 
 
 
