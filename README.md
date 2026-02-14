@@ -1,57 +1,71 @@
 # Telco Customer Churn Prediction
 
-## Executive Summary
+## Project Summary
 
-This project develops predictive models to identify high-risk customers for churn in a telecommunications business.
+This project develops a customer churn prediction model for a telecommunications company.  
+The objective is to identify high-risk customers and support data-driven retention strategies.
 
-Best Model: Logistic Regression  
-Test ROC-AUC: 0.83  
-Cross-Validation ROC-AUC: 0.85  
+**Best Performing Model:** Logistic Regression  
+**Test AUC:** 0.8319  
+**Cross-Validation AUC:** 0.8452  
 
-The model demonstrates stable generalization performance and provides actionable insights for retention strategy optimization.
+Logistic Regression demonstrated stronger generalization and more stable performance across validation folds.
 
 
 
-## Business Context
+## Business Problem
 
-Customer churn directly impacts recurring revenue and customer lifetime value (CLV).  
-Accurate churn prediction enables targeted intervention before revenue loss occurs.
+Customer churn represents significant revenue loss for telecom providers.  
+Acquiring new customers is typically more expensive than retaining existing ones.
 
-From a business perspective:
+The goal of this project is to:
 
-- Missing a churn customer (False Negative) results in lost revenue.
-- Incorrectly targeting a loyal customer (False Positive) incurs marketing cost.
-
-Therefore, model evaluation must go beyond accuracy and focus on Recall and ROC-AUC.
+- Predict which customers are likely to churn  
+- Improve early detection of at-risk customers  
+- Support targeted retention campaigns  
+- Reduce revenue leakage  
 
 
 
 ## Dataset Overview
 
-- 7,043 customers
-- 21 features
-- Binary classification (Churn: Yes/No)
-- Imbalanced dataset (~26% churn rate)
+- 7,043 customers  
+- 21 features  
+- Binary classification problem (Churn: Yes/No)  
+- Imbalanced dataset (~26% churn rate)  
+
+Key variables include:
+
+- Contract type  
+- Monthly charges  
+- Tenure  
+- Payment method  
+- Internet services  
 
 
 
-## Modeling Approach
+## Data Preparation
 
-### Data Preparation
 - Cleaned missing values in `TotalCharges`
-- One-hot encoding for categorical variables
-- 80/20 Train/Test split
-- StandardScaler applied for Logistic Regression
+- Converted categorical variables using one-hot encoding
+- Train/test split (80/20)
+- Standardized features for Logistic Regression using a Pipeline
 
-### Models Implemented
-- Logistic Regression (Pipeline)
-- Random Forest Classifier
 
-### Evaluation Metrics
-- ROC-AUC
-- Accuracy
-- Confusion Matrix
-- 5-Fold Cross-Validation
+
+## Models Implemented
+
+### Logistic Regression (with StandardScaler Pipeline)
+
+- Baseline linear classification model  
+- Interpretable and stable  
+- Best generalization performance  
+
+### Random Forest Classifier
+
+- Non-linear ensemble model  
+- Used for performance comparison  
+- Slightly lower cross-validation stability  
 
 
 
@@ -62,25 +76,7 @@ Therefore, model evaluation must go beyond accuracy and focus on Recall and ROC-
 | Logistic Regression | 0.8319 | 0.8452 | 0.7875 |
 | Random Forest | 0.8160 | 0.8232 | 0.7854 |
 
-Logistic Regression demonstrated stronger and more stable cross-validation performance, indicating better generalization.
-
-
-
-## Confusion Matrix Analysis (Logistic Regression)
-
-<img src="images/confusion_matrix.png" width="450">
-
-Baseline results:
-
-- True Positives (Churn correctly predicted): 193
-- False Negatives (Missed churn customers): 181
-- False Positives (Incorrect churn alerts): 118
-
-Interpretation:
-
-The model captures a meaningful portion of churn customers, but reducing False Negatives remains critical because missed churn leads directly to revenue loss.
-
-From a retention strategy perspective, threshold tuning or recall optimization may further improve business value.
+Logistic Regression achieved better AUC and stronger cross-validation consistency.
 
 
 
@@ -88,26 +84,78 @@ From a retention strategy perspective, threshold tuning or recall optimization m
 
 <img src="images/roc_curve.png" width="500">
 
-The ROC curve demonstrates strong separation capability between churn and non-churn customers.
+The ROC curve shows strong discriminatory power for both models, with Logistic Regression performing slightly better overall.
 
 
 
-## Key Drivers of Churn
+## Confusion Matrix Analysis (Logistic Regression)
 
-Based on model behavior and feature patterns:
+### Baseline Model (Threshold = 0.5)
 
-- Month-to-month contracts show the highest churn risk
-- Higher monthly charges increase churn probability
-- Early-tenure customers are more likely to churn
+<img src="images/confusion_matrix.png" width="450">
+
+Results:
+
+- True Positives: 193  
+- False Negatives: 181  
+- False Positives: 118  
+- True Negatives: 915  
+
+Recall ≈ 51.6%
+
+The baseline model misses a substantial number of churn customers.
+
+
+
+### Optimized Threshold Model
+
+<img src="images/confusion_matrix 2.png" width="450">
+
+Results:
+
+- True Positives: 296  
+- False Negatives: 78  
+- False Positives: 300  
+- True Negatives: 733  
+
+Recall ≈ 79.1%
+
+After threshold tuning, recall improved significantly, allowing better identification of at-risk customers.
+
+
+
+## Business Trade-off Analysis
+
+Increasing recall reduces revenue leakage by identifying more churn customers.  
+However, it increases false positives, which raises retention campaign costs.
+
+This represents a strategic trade-off:
+
+- Higher recall → More churn customers detected → Lower revenue loss  
+- Higher precision → Lower campaign cost  
+
+Optimal threshold selection should depend on:
+
+- Customer lifetime value  
+- Retention campaign cost  
+- Marketing budget constraints  
+
+
+
+## Key Insights
+
+- Month-to-month contracts show the highest churn risk  
+- Higher monthly charges are associated with higher churn probability  
+- Early-tenure customers are significantly more likely to churn  
 
 
 
 ## Business Recommendations
 
-- Prioritize retention campaigns for month-to-month customers
-- Offer incentives for long-term contract conversion
-- Implement proactive engagement programs within the first 6 months
-- Consider recall-optimized deployment strategy to reduce revenue leakage
+- Target retention campaigns toward month-to-month customers  
+- Offer incentives for long-term contract conversion  
+- Focus early engagement programs within the first 6 months  
+- Implement threshold-based targeting depending on marketing budget  
 
 
 
@@ -118,4 +166,4 @@ Pandas
 NumPy  
 Scikit-learn  
 Matplotlib  
-Seaborn
+Seaborn  
