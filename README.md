@@ -2,62 +2,58 @@
 
 ## Executive Summary
 
-This project develops predictive models to identify high-risk customers for a telecommunications company facing revenue loss due to churn.
+This project develops predictive models to identify high-risk customers for churn in a telecommunications business.
 
-The final selected model, Logistic Regression with class balancing, achieved:
+Best Model: Logistic Regression  
+Test ROC-AUC: 0.83  
+Cross-Validation ROC-AUC: 0.85  
 
-- Test AUC: 0.83  
-- Cross-Validation AUC: 0.85  
-- Improved recall for churn customers after model adjustment  
+The model demonstrates stable generalization performance and provides actionable insights for retention strategy optimization.
 
-The objective was not only to maximize AUC, but to reduce missed churn customers and align the model with business retention goals.
 
----
 
-## Business Problem
+## Business Context
 
-Customer churn directly impacts recurring revenue and customer lifetime value in subscription-based businesses.
+Customer churn directly impacts recurring revenue and customer lifetime value (CLV).  
+Accurate churn prediction enables targeted intervention before revenue loss occurs.
 
-The goal of this project is to:
+From a business perspective:
 
-- Predict which customers are likely to churn
-- Reduce false negatives (missed churn customers)
-- Enable targeted retention campaigns
-- Improve revenue protection strategy
+- Missing a churn customer (False Negative) results in lost revenue.
+- Incorrectly targeting a loyal customer (False Positive) incurs marketing cost.
 
----
+Therefore, model evaluation must go beyond accuracy and focus on Recall and ROC-AUC.
+
+
 
 ## Dataset Overview
 
 - 7,043 customers
-- 21 features (demographic, service usage, billing information)
+- 21 features
 - Binary classification (Churn: Yes/No)
 - Imbalanced dataset (~26% churn rate)
 
----
+
 
 ## Modeling Approach
 
 ### Data Preparation
-
-- Cleaned missing values in TotalCharges
-- Applied one-hot encoding to categorical variables
-- Train/Test split (80/20)
-- StandardScaler applied through Pipeline for Logistic Regression
+- Cleaned missing values in `TotalCharges`
+- One-hot encoding for categorical variables
+- 80/20 Train/Test split
+- StandardScaler applied for Logistic Regression
 
 ### Models Implemented
-
-- Logistic Regression (Pipeline with scaling)
+- Logistic Regression (Pipeline)
 - Random Forest Classifier
 
 ### Evaluation Metrics
-
 - ROC-AUC
 - Accuracy
-- Precision and Recall
+- Confusion Matrix
 - 5-Fold Cross-Validation
 
----
+
 
 ## Model Performance
 
@@ -66,43 +62,54 @@ The goal of this project is to:
 | Logistic Regression | 0.8319 | 0.8452 | 0.7875 |
 | Random Forest | 0.8160 | 0.8232 | 0.7854 |
 
-Logistic Regression demonstrated stronger and more stable cross-validation performance.
+Logistic Regression demonstrated stronger and more stable cross-validation performance, indicating better generalization.
 
----
 
-## Model Improvement: Business-Oriented Optimization
 
-Because missing a churn customer (False Negative) is more costly than a False Positive, the model was retrained using class weighting to reduce churn misclassification.
-
-This adjustment significantly improved recall for churn customers, enabling better alignment with retention strategy objectives.
-
-### Confusion Matrix (Baseline)
+## Confusion Matrix Analysis (Logistic Regression)
 
 <img src="images/confusion_matrix.png" width="450">
 
-### Confusion Matrix (Class Balanced)
+Baseline results:
 
-<img src="images/confusion_matrix 2.png" width="450">
+- True Positives (Churn correctly predicted): 193
+- False Negatives (Missed churn customers): 181
+- False Positives (Incorrect churn alerts): 118
 
-The balanced model reduces missed churn customers and increases actionable retention opportunities.
+Interpretation:
 
----
+The model captures a meaningful portion of churn customers, but reducing False Negatives remains critical because missed churn leads directly to revenue loss.
 
-## Key Insights
+From a retention strategy perspective, threshold tuning or recall optimization may further improve business value.
 
-- Month-to-month contracts exhibit the highest churn risk
-- Higher monthly charges correlate with increased churn probability
-- Customers in early tenure stages are more likely to churn
 
----
+
+## ROC Curve
+
+<img src="images/roc_curve.png" width="500">
+
+The ROC curve demonstrates strong separation capability between churn and non-churn customers.
+
+
+
+## Key Drivers of Churn
+
+Based on model behavior and feature patterns:
+
+- Month-to-month contracts show the highest churn risk
+- Higher monthly charges increase churn probability
+- Early-tenure customers are more likely to churn
+
+
 
 ## Business Recommendations
 
-- Deploy targeted retention campaigns for month-to-month customers
-- Offer incentives to encourage long-term contract migration
-- Implement early engagement programs within the first six months of subscription
+- Prioritize retention campaigns for month-to-month customers
+- Offer incentives for long-term contract conversion
+- Implement proactive engagement programs within the first 6 months
+- Consider recall-optimized deployment strategy to reduce revenue leakage
 
----
+
 
 ## Tech Stack
 
