@@ -92,7 +92,7 @@ The ROC curve shows strong discriminatory power for both models, with Logistic R
 
 ### Baseline Model (Threshold = 0.5)
 
-<img src="images/confusion_matrix_Baseline.png" width="450">
+<img src="images/confusion_matrix_baseline.png" width="450">
 
 Results:
 
@@ -109,7 +109,7 @@ The baseline model misses a substantial number of churn customers.
 
 ### Optimized Threshold Model
 
-<img src="images/confusion_matrix_threshold.png" width="450">
+<img src="images/confusion_matrix_threshold_tuned.png" width="450">
 
 Results:
 
